@@ -13,6 +13,9 @@ try:
 except ImportError:
     st.error("Module 'rembg' not found. Install with `pip install rembg`")
 
+if "capture_triggered" not in st.session_state:
+    st.session_state.capture_triggered = False
+
 # --- Constants ---
 CATEGORIES = ["Dresses", "T-shirts", "Hats", "Glasses"]
 FOLDER_MAP = {c: c.replace(" ", "").replace("-", "") for c in CATEGORIES}
